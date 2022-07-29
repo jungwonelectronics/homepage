@@ -1,12 +1,12 @@
 import * as React from "react";
 import PageLayout from '../components/PageLayout/PageLayout';
 
-const IndexPage = () => {
+const ProductPage = () => {
   return (
-    <PageLayout pageTitle="Home">
-      <h1>Home</h1>
+    <PageLayout pageTitle="Product">
+      <h1>Product</h1>
     </PageLayout>
   );
 }
 
-export default IndexPage;
+export default ProductPage;
