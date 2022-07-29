@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkjungwon_electronics_homepage=self.webpackChunkjungwon_electronics_homepage||[]).push([[875],{3130:function(e,n,t){t.r(n);var a=t(7294),c=t(8855);n.default=function(){return a.createElement(c.Z,{pageTitle:"Company"},a.createElement("h1",null,"Company"))}}}]);
+//# sourceMappingURL=component---src-pages-company-js-05009472bee2fe91bef1.js.map
