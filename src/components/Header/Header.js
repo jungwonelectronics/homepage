@@ -1,24 +1,22 @@
-import * as React from "react";
-import { navigate } from "gatsby";
-import { useTheme } from '@mui/material/styles';
+import * as React from 'react';
+import { navigate } from 'gatsby';
 import Icon from '../meterial/Icon';
 import IconButton from '../meterial/IconButton';
 import Select from '../meterial/Select';
 import Menu from '../meterial/Menu';
 import Drawer from '../meterial/Drawer';
 import List from '../meterial/List';
+import Navigation from '../Navigation/Navigation';
 import { LanguageContext } from '../../context/LanguageContext';
 import { languageOptions } from '../../constant/language';
 import Logo from '../../images/logo.png';
 import {
-  HeaderStyled, LogoWrapperStyled, LogoStyled, LanguageWrapperStyled,
-  NavStyled, MenuStyled, MenuItemStyled, HideMenuStyled,
+  HeaderStyled, LogoWrapperStyled, LogoStyled, LanguageWrapperStyled, HideMenuStyled,
 } from './HeaderStyled';
 
 
 export default function Header({ menu }) {
   const { lang, language, onChangeLanguage } = React.useContext(LanguageContext);
-  const theme = useTheme();
   return (
     <HeaderStyled>
       <LogoWrapperStyled>
@@ -28,19 +26,7 @@ export default function Header({ menu }) {
           <img src={Logo} alt="Logo" height="60px" />
         </LogoStyled>
       </LogoWrapperStyled>
-      <NavStyled>
-        <MenuStyled>
-          {menu.map(item => (
-            <MenuItemStyled
-              key={item.langKey}
-              theme={theme}
-              onClick={() => { navigate(`/${item.id}`) }}
-            >
-              {lang[item.langKey]}
-            </MenuItemStyled>
-          ))}
-        </MenuStyled>
-      </NavStyled>
+      <Navigation menu={menu} />
       <LanguageWrapperStyled>
         <Icon name="language" color="#555" sx={{ marginRight: '10px' }} />
         <Select
@@ -66,6 +52,7 @@ export default function Header({ menu }) {
             sx={{ width: '250px' }}
             list={menu}
             lang={lang}
+            onClickListItem={id => navigate(`/${id.replace('_', '/')}`)}
           />
         </Drawer>
       </HideMenuStyled>

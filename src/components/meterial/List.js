@@ -8,7 +8,7 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 
-export default function List({ list, lang, ...rest }) {
+export default function List({ list, lang, onClickListItem, ...rest }) {
   const [state, setState] = React.useState({});
   const handleClick = id => {
     setState({
@@ -18,10 +18,10 @@ export default function List({ list, lang, ...rest }) {
   };
   return (
     <MeterialList {...rest}>
-      {list.map((item, index) => (
+      {list.map(item => (
         <React.Fragment key={`list-${item.id}`}>
           <ListItem disablePadding>
-            <ListItemButton onClick={item.childs ? () => handleClick(item.id) : () => {}}>
+            <ListItemButton onClick={item.childs ? () => handleClick(item.id) : () => onClickListItem(item.id)}>
               <ListItemText primary={item.langKey ? lang[item.langKey] : item.label} />
               {item.childs && (
               <>
@@ -35,7 +35,7 @@ export default function List({ list, lang, ...rest }) {
               <MeterialList component="div" disablePadding>
               {item.childs.map(childItem => (
               <ListItem key={`child-list-${childItem.id}`} disablePadding sx={{ pl: 2}}>
-                <ListItemButton>
+                <ListItemButton onClick={() => onClickListItem(childItem.id)}>
                   <ListItemText primary={childItem.langKey ? lang[childItem.langKey] : childItem.label} />
                 </ListItemButton>
               </ListItem>

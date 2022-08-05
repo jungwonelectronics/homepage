@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { default as MeterialMenu } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export default function Menu({ id, Button, menus, onClick, value }) {
+export default function Menu({
+  id, Button, menus, onClick, value,
+}) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = e => { setAnchorEl(e.currentTarget); };
@@ -28,7 +30,14 @@ export default function Menu({ id, Button, menus, onClick, value }) {
         MenuListProps={{
           'aria-labelledby': `${id}-menu-button`,
         }}
-        // variant="selectedMenu"
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
       >
         {menus.map(item => (
           <MenuItem

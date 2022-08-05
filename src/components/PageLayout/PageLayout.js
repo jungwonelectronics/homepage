@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
   }
 `;
 
@@ -34,11 +35,12 @@ const Wrapper = styled.div`
   height: 100vh;
 `;
 
-export const PageStyled = styled.div`
+const PageStyled = styled.div`
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: auto;
+  flex-direction: column;
+  position: relative;
 `;
 
 const PageLayout = ({ pageTitle, children }) => {
