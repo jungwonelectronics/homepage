@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkjungwon_electronics_homepage=self.webpackChunkjungwon_electronics_homepage||[]).push([[962],{5615:function(e,n,t){t.r(n);var a=t(7294),c=t(662);n.default=function(){var e="Company > CEO";return a.createElement(c.Z,{pageTitle:e},a.createElement("h1",null,e))}}}]);
+//# sourceMappingURL=component---src-pages-company-ceo-js-cd4bd70d3d74b2a7d7d5.js.map
