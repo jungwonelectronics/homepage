@@ -8,7 +8,7 @@ export const HeaderStyled = styled.div`
   flex-shrink: 0;
   @media (max-width: 767px) {
     justify-content: space-between;
-    padding: 0 20px 0 40px;
+    padding: 0 20px;
     align-items: center;
   }
 `;

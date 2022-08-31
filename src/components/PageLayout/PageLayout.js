@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { LanguageProvider } from '../../context/LanguageContext';
 import { menu } from '../../constant/menu';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const theme = createTheme({
   typography: {
@@ -53,6 +54,7 @@ const PageLayout = ({ pageTitle, children }) => {
           <Wrapper>
             <Header menu={menu} />
             <PageStyled>{children}</PageStyled>
+            <Footer />
           </Wrapper>
         </LanguageProvider>
       </ThemeProvider>
