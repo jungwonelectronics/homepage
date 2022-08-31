@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const FooterStyled = styled.footer`
+  flex-basis: 100px;
+  flex-shrink: 0;
   background-color: #343a40;
-  height: 100px;
   line-height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 420px) {
+    line-height: 18px;
+  }
 `;
 
 export const WrapperStyled = styled.div`
@@ -23,6 +27,10 @@ export const LinkWrapperStyled = styled.div`
   font-size: 16px;
   display: flex;
   color: #999;
+  @media (max-width: 420px) {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
 `;
 
 export const LinkStyled = styled.p`
