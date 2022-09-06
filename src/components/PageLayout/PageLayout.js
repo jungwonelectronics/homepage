@@ -1,10 +1,13 @@
 import * as React from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import styled, { createGlobalStyle } from "styled-components";
-import { LanguageProvider } from '../../context/LanguageContext';
+import { LanguageProvider, LanguageContext } from '../../context/LanguageContext';
 import { menu } from '../../constant/menu';
 import Header from '../Header/Header';
+import SubTitle from '../SubTitle/SubTitle';
 import Footer from '../Footer/Footer';
+import {
+  GlobalStyle, Wrapper, PageStyled
+} from './PageLayoutStyled';
 
 const theme = createTheme({
   typography: {
@@ -18,41 +21,17 @@ const theme = createTheme({
   },
 });
 
-const GlobalStyle = createGlobalStyle`
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Noto Sans KR', sans-serif;
-    margin: 0;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100);
-`;
-
-const PageStyled = styled.div`
-  flex: 1;
-  display: flex;
-  overflow: auto;
-  flex-direction: column;
-  position: relative;
-`;
-
 const PageLayout = ({ pageTitle, children }) => {
+  const { lang } = React.useContext(LanguageContext);
   return (
     <main>
-      <title>{`Jungwon Electronics > ${pageTitle}`}</title>
+      <title>{`정원전자 > ${lang[pageTitle]}`}</title>
       <ThemeProvider theme={theme}>
         <LanguageProvider>
           <GlobalStyle />
           <Wrapper>
             <Header menu={menu} />
+            <SubTitle pageTitle={pageTitle} menu={menu} />
             <PageStyled>{children}</PageStyled>
             <Footer />
           </Wrapper>

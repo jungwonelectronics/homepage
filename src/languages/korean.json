@@ -1,9 +1,9 @@
 {
-  "company": "회사",
-  "product": "제품",
+  "company": "회사 소개",
+  "product": "제품 소개",
   "contact": "문의",
   "CEOGreetings": "대표인사 인사말",
-  "introduction": "소개",
+  "introduction": "기업 정보",
   "history": "연혁",
   "carrierAndDeveloper": "Carrier & Developer",
   "cartridge": "Cartridge",

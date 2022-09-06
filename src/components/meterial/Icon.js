@@ -4,12 +4,14 @@ import Menu from '@mui/icons-material/Menu';
 import Language from '@mui/icons-material/Language';
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
 
 const ICON_LIST = {
   menu: Menu,
   language: Language,
   call: CallIcon,
   mail: MailIcon,
+  home: HomeIcon,
 }
 
 export default function Icon({ name, size, color, margin, ...rest }) {
