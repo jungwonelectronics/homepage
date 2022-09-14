@@ -42,13 +42,75 @@ const Paragraph = styled.div`
     width: 536px;
   }
   @media (max-width: 578px) {
+    width: 400px;
+    font-size: 16px;
+  }
+  @media (max-width: 450px) {
+    width: 346px;
+    font-size: 14px;
+  }
+  @media (max-width: 372px) {
     width: 100%;
+  }
+`;
+
+const SubTitleArea = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  @media (max-width: 578px) {
     font-size: 16px;
   }
   @media (max-width: 450px) {
     font-size: 14px;
   }
 `;
+
+const CardArea = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 826px;
+  @media (max-width: 870px) {
+    width: 100%;
+  }
+  @media (max-width: 800px) {
+    width: 600px;
+  }
+  @media (max-width: 640px) {
+    width: 400px;
+    flex-wrap: wrap;
+  }
+`;
+
+const Card = styled.div`
+  background-color: #f2f2f2;
+  height: 200px;
+  margin: 0 10px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+  @media (max-width: 640px) {
+    flex: initial;
+    width: 170px;
+    margin: 10px;
+    font-size: 16px;
+  }
+  @media (max-width: 440px) {
+    width: 215px;
+    font-size: 17px;
+  }
+`;
+
 
 const CEOPage = () => {
   const theme = useTheme();
@@ -70,6 +132,15 @@ const CEOPage = () => {
             변함없는 애정으로 지켜봐 주시기 바랍니다.
         </Paragraph>
       </ParagraphArea>
+      <SubTitleArea>
+        <p>주요 사업</p>
+      </SubTitleArea>
+      <CardArea>
+        <Card>프린터, 복사기용 캐리어, 현상제 제조 판매</Card>
+        <Card>재제조 토너 카트리지 생산 판매</Card>
+        <Card>재제조 PCU 생산 판매</Card>
+        <Card>프린터, 복사기 A/S용 부품 판매</Card>
+      </CardArea>
     </PageLayout>
   );
 }

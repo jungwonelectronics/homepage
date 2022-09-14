@@ -25,4 +25,5 @@ export const PageStyled = styled.div`
   flex-direction: column;
   position: relative;
   padding: 30px 20px;
+  align-items: center;
 `;
