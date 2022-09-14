@@ -84,6 +84,9 @@ const CardArea = styled.div`
     width: 400px;
     flex-wrap: wrap;
   }
+  @media (max-width: 440px) {
+    width: 100%;
+  }
 `;
 
 const Card = styled.div`
@@ -106,7 +109,7 @@ const Card = styled.div`
     font-size: 16px;
   }
   @media (max-width: 440px) {
-    width: 215px;
+    width: 95%;
     font-size: 17px;
   }
 `;

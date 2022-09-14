@@ -21,7 +21,8 @@ export const Wrapper = styled.div`
 export const PageStyled = styled.div`
   flex: 1;
   display: flex;
-  overflow: auto;
+  overflow: hidden;
+  overflow-y: auto;
   flex-direction: column;
   position: relative;
   padding: 30px 20px;
