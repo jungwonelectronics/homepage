@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useTheme } from '@mui/material/styles';
-import { StaticImage } from 'gatsby-plugin-image';
 import {
   Wrapper, Title, ImageArea, ImageWrapper,
 } from './ProductIntroductionStyled';

@@ -14,38 +14,6 @@ const ImageWrapperStyled = styled.div`
   }
 `;
 
-const TextWrpperStyled = styled.div`
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  color: white;
-  font-size: 6px;
-  height: 80px;
-  font-size: 28px;
-  letter-spacing: 3px;
-  font-weight: 200;
-  text-shadow: 2px 2px 2px #000;
-  .title {
-    font-size: 58px;
-    letter-spacing: 10px;
-    font-weight: normal;
-  }
-  @media (max-width: 550px) {
-    top: 25px;
-    left: 25px;
-    font-size: 20px;
-    .title {
-      font-size: 40px;
-    }
-  }
-  @media (max-width: 375px) {
-    font-size: 12px;
-    .title {
-      font-size: 32px;
-    }
-  }
-`;
-
 const IndexPage = () => {
   return (
     <PageLayout pageTitle="Home">

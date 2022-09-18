@@ -1,13 +1,10 @@
 import * as React from "react";
-// import styled from 'styled-components';
-import { useTheme } from '@mui/material/styles';
 import { StaticImage } from 'gatsby-plugin-image';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import Paragraph from '../../components/Paragraph/Paragraph';
 import ProductIntroduction from '../../components/ProductIntroduction/ProductIntroduction';
 
 const IntroductionPage = () => {
-  const theme = useTheme();
   return (
     <PageLayout pageTitle="introduction">
       <div>

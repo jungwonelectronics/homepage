@@ -3,13 +3,13 @@ import { navigate } from 'gatsby';
 import IconButton from '../meterial/IconButton';
 import Language from '../Language/Language';
 import {
-  WrapperStyled, NaviWrapperStyled, SpanStyled, ColorSpanStyled
+  WrapperStyled, NaviWrapperStyled, SpanStyled
 } from './SubTitleStyled';
 
 const getMenu = (path, menu) => {
   const menuLangKeys = [];
   if (path) {
-    const [_, parent, child] = path.split('/').splice(0, 3);
+    const [parent, child] = path.split('/').splice(1, 3);
     const parentMenu = menu.find(menuItem => menuItem.id === parent);
     if (parentMenu) {
       menuLangKeys.push(parentMenu.langKey);
