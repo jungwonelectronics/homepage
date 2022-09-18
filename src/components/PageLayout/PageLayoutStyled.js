@@ -46,7 +46,7 @@ export const PageStyled = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 30px 20px;
+  padding: 30px 20px 60px 20px;
   align-items: center;
   min-height: calc(100vh - 70px - 116px);
   font-size: 18px;
