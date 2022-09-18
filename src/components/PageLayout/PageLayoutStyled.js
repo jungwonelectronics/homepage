@@ -9,22 +9,59 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
   }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #a5a5a5;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    border: 0px solid;
+    background-color: #797979;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    border: 0px solid;
+    background-color: #4c4c4c;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100);
+  align-items: center; 
 `;
 
 export const PageStyled = styled.div`
   flex: 1;
   display: flex;
-  overflow: hidden;
-  overflow-y: auto;
   flex-direction: column;
   position: relative;
   padding: 30px 20px;
   align-items: center;
+  min-height: calc(100vh - 70px - 116px);
+  font-size: 18px;
+  width: 1060px;
+  @media (max-width: 1280px) {
+    width: 860px;
+  }
+  @media (max-width: 1024px) {
+    width: 625px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 16px;
+  }
+  @media (max-width: 425px) {
+    font-size: 14px;
+  }
 `;

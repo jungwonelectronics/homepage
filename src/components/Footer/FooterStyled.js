@@ -1,24 +1,30 @@
 import styled from 'styled-components';
 
 export const FooterStyled = styled.footer`
-  flex-basis: 100px;
-  flex-shrink: 0;
+  height: 116px;
+  width: 100%;
   background-color: #343a40;
   line-height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 420px) {
+  @media (max-width: 425px) {
     line-height: 18px;
   }
 `;
 
 export const WrapperStyled = styled.div`
-  width: 420px;
   font-size: 14px;
-  @media (max-width: 420px) {
-    width: 300px;
-    font-size: 10px;
+  padding: 20px;
+  width: 1060px;
+  @media (max-width: 1280px) {
+    width: 860px;
+  }
+  @media (max-width: 1024px) {
+    width: 625px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -27,7 +33,7 @@ export const LinkWrapperStyled = styled.div`
   font-size: 16px;
   display: flex;
   color: #999;
-  @media (max-width: 420px) {
+  @media (max-width: 425px) {
     font-size: 12px;
     margin-bottom: 5px;
   }

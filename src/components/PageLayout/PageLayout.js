@@ -23,16 +23,19 @@ const theme = createTheme({
 
 const PageLayout = ({ pageTitle, children }) => {
   const { lang } = React.useContext(LanguageContext);
+  const isHome = pageTitle === 'Home';
   return (
     <main>
-      <title>{`정원전자 > ${lang[pageTitle]}`}</title>
+      <title>{isHome ? '정원전자' : `정원전자 > ${lang[pageTitle]}`}</title>
       <ThemeProvider theme={theme}>
         <LanguageProvider>
           <GlobalStyle />
           <Wrapper>
             <Header menu={menu} />
-            <SubTitle pageTitle={pageTitle} menu={menu} />
-            <PageStyled>{children}</PageStyled>
+            <PageStyled>
+              {!isHome && <SubTitle pageTitle={pageTitle} menu={menu} />}
+              {children}
+            </PageStyled>
             <Footer />
           </Wrapper>
         </LanguageProvider>
