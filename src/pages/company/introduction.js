@@ -63,6 +63,9 @@ const IntroductionPage = () => {
           />),
         ]}
       />
+      <div style={{ width: '100%' }}>
+        <p>항상  더 나은 품질을 고객에게 약속드리기 위해 끊임없이 기술 개발과 품질 관리를 위해 노력하고 있는 ㈜정원전자입니다.</p>
+      </div>
     </PageLayout>
   );
 }
