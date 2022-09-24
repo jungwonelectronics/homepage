@@ -11,6 +11,21 @@ import styled from 'styled-components';
 const DateContent = styled.div`
   color: ${({ theme }) => theme.palette.primary.main};
   font-weight: 700;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
+`;
+
+const Content = styled.div`
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
 `;
 
 
@@ -26,7 +41,7 @@ export default function Timeline({ timelines }) {
           </TimelineSeparator>
           <TimelineContent>
             <DateContent theme={theme}>{timeline.date}</DateContent>
-            <div>{timeline.descs ? timeline.descs.map((desc, index) => <div key={`desc_${index}`}>{desc}</div>) : timeline.desc}</div>
+            <Content>{timeline.descs ? timeline.descs.map((desc, index) => <div key={`desc_${index}`}>{desc}</div>) : timeline.desc}</Content>
           </TimelineContent>
         </TimelineItem>
       ))}

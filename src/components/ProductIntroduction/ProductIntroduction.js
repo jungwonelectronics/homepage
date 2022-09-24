@@ -8,13 +8,12 @@ const ProductIntroduction = ({
   title, introduction, images
 }) => {
   const theme = useTheme();
-  console.log('images', images);
   return (
     <Wrapper>
       <Title theme={theme}>
-        <p>{title}</p>
+        <span>{title}</span>
       </Title>
-      <p>{introduction}</p>
+      <span>{introduction}</span>
       <ImageArea>
         {images.map((image, index) => (
           <ImageWrapper key={index}>

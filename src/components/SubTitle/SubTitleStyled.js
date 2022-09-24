@@ -12,6 +12,7 @@ export const NaviWrapperStyled = styled.div`
   align-items: center;
   justify-content: center;
   color: #555;
+  font-size: 14px;
 `;
 
 export const SpanStyled = styled.span`

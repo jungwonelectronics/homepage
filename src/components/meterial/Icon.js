@@ -5,6 +5,9 @@ import Language from '@mui/icons-material/Language';
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
 import HomeIcon from '@mui/icons-material/Home';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import FaxIcon from '@mui/icons-material/Fax';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 const ICON_LIST = {
   menu: Menu,
@@ -12,6 +15,9 @@ const ICON_LIST = {
   call: CallIcon,
   mail: MailIcon,
   home: HomeIcon,
+  location: LocationOnIcon,
+  fax: FaxIcon,
+  copy: ContentCopyIcon,
 }
 
 export default function Icon({ name, size, color, margin, ...rest }) {

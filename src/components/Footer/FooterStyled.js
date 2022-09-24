@@ -60,4 +60,7 @@ export const CopyrightStyled = styled.p`
 export const ContactStyled = styled.p`
   margin: 0;
   color: #fff;
+  a {
+    color: #fff;
+  }
 `;

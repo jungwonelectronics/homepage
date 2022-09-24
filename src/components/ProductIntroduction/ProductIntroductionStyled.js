@@ -11,6 +11,7 @@ export const Title = styled.p`
 
 export const ImageArea = styled.div`
   display: flex;
+  margin-top: 10px;
 `;
 
 export const ImageWrapper = styled.div`
