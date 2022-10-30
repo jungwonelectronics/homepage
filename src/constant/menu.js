@@ -15,8 +15,7 @@ export const menu = [
     page: 'ProductPage',
     childs: [
       { id: 'product_carrier', langKey: 'carrierAndDeveloper', page: 'CarrierPage' }, //  carrier&developer
-      { id: 'product_catridge', langKey: 'cartridge', page: 'CatridgePage' }, // cartridge
-      { id: 'product_etc', langKey: 'etc', page: 'EtcPage' } // etc
+      { id: 'product_cartridge', langKey: 'cartridge', page: 'CartridgePage' }, // cartridge
     ],
   },
   {

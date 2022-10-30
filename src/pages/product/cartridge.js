@@ -1,12 +1,13 @@
 import * as React from "react";
 import PageLayout from '../../components/PageLayout/PageLayout';
+import CartridgeTable from '../../components/table/CartridgeTable';
 
-const CatridgePage = () => {
+const CartridgePage = () => {
   return (
     <PageLayout pageTitle="cartridge">
-      <div>Catridge Page</div>
+      <CartridgeTable />
     </PageLayout>
   );
 }
 
-export default CatridgePage;
+export default CartridgePage;
