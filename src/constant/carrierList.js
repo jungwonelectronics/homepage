@@ -4,7 +4,7 @@ export const header = [
   { id: 'jweCode', label: 'JWE Code' },
   { id: 'model', label: 'Model' },
   { id: 'useInList', label: 'Recommended Machine for use In' },
-  { id: 'remarks', label: 'Remarks' }
+  // { id: 'remarks', label: 'Remarks' }
 ];
 
 export const list = [
