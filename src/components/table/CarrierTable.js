@@ -34,14 +34,14 @@ export default function CarrierTable() {
                   <TableCell>{product.machine}</TableCell>
                   <TableCell>{product.jweCode}</TableCell>
                   <TableCell>{product.model}</TableCell>
-                  <TableCell>
+                  <TableCell sx={{ wordBreak: 'break-word' }}>
                     {product.useInList.map(useIn => 
                       <div key={useIn}>{useIn}</div>
                     )}
                   </TableCell>
-                  {product.remarks && (
+                  {/* {product.remarks && (
                     <TableCell>{product.remarks}</TableCell>
-                  )}
+                  )} */}
                 </TableRow>
               )}
             </React.Fragment>

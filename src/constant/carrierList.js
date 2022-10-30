@@ -48,7 +48,7 @@ export const list = [
         jweCode: 'TD-9',
         model: 'Phaser5500(Developer)',
         useInList: [
-          'Phaser5500/5550/5520/5230',
+          'Phaser 5500/5550/5520/5230',
           'Tally 9050',
           'Lexmark W840',
           'Dell 7330',
@@ -80,7 +80,7 @@ export const list = [
         jweCode: 'TC-19',
         model: 'Phaser5500',
         useInList: [
-          'Phaser5500/5550/5520/5230',
+          'Phaser 5500/5550/5520/5230',
           'Tally 9050',
           'Lexmark W840',
           'Dell 7330',
@@ -104,7 +104,7 @@ export const list = [
         jweCode: 'TC43',
         model: 'DCC2270',
         useInList: [
-          'DCC2270/2275/3370/3375/4470/5570',
+          'DCC 2270/2275/3370/3375/4470/5570',
         ],
       },
     ],
@@ -150,8 +150,8 @@ export const list = [
         model: 'Bizhub 350',
         useInList: [
           'Bizhub 227/287/367/200/222/250/282/350/362',
-          'BHC250i/D450',
-          'BH283/263/423(TN217)',
+          'BHC 250i/D450',
+          'BH 283/263/423(TN217)',
         ],
         remarks: 'Carrier, Developer',
       },
@@ -160,7 +160,7 @@ export const list = [
         jweCode: 'TC41/TD41',
         model: 'BHC224',
         useInList: [
-          'BHC224/284/364(TN321)/C225/258/368(TN324)',
+          'BHC 224/284/364(TN321)/C225/258/368(TN324)',
         ],
         remarks: 'Carrier, Developer',
       },
@@ -190,8 +190,8 @@ export const list = [
         jweCode: 'TC21s',
         model: 'iRC3200',
         useInList: [
-          'iRC2620/3220/3200/2600, GPR11',
-          'iRC4580,5180,4080,5185,4040,5080,5151',
+          'iRC 2620/3220/3200/2600, GPR11',
+          'iRC 4580,5180,4080,5185,4040,5080,5151',
         ],
       },
       {
@@ -199,7 +199,7 @@ export const list = [
         jweCode: 'TC22s',
         model: 'iRC3480',
         useInList: [
-          'iRC3480/3380/3080/2550/2880, GPR23',
+          'iRC 3480/3380/3080/2550/2880, GPR23',
         ],
       },
       {
