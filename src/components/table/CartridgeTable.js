@@ -1,12 +1,11 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { header, list } from '../../constant/cartridgeList';
+import { StyledPaper, StyledTableCell, StyledTableRow } from './tableStyled';
 
 const parseList = list => {
   const result = [];
@@ -35,12 +34,12 @@ const parseList = list => {
 export default function CartridgeTable() {
   const modelList = parseList(list);
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="Carriet developer product list">
+    <TableContainer component={StyledPaper}>
+      <Table aria-label="Carriet developer product list"  size="small">
         <TableHead>
           <TableRow>
             {header.map(item =>
-              <TableCell key={item.id}>{item.label}</TableCell>
+              <StyledTableCell align="center" key={item.id}>{item.label}</StyledTableCell>
             )}
           </TableRow>
         </TableHead>
@@ -48,21 +47,21 @@ export default function CartridgeTable() {
           {modelList.map((model, modelIndex) => 
             <React.Fragment key={modelIndex}>
               {model.map((product, productIndex) =>
-                <TableRow key={`table-row-${productIndex}`}>
-                  <TableCell>
+                <StyledTableRow key={`table-row-${productIndex}`}>
+                  <StyledTableCell align="center">
                     {product.no}
-                  </TableCell>
+                  </StyledTableCell>
                   {productIndex === 0 && (
-                    <TableCell
+                    <StyledTableCell align="center"
                       rowSpan={model.length}
                     >
                       {product.model}
-                    </TableCell>
+                    </StyledTableCell>
                   )}
-                  <TableCell>{product.description}</TableCell>
-                  <TableCell>{product.color}</TableCell>
-                  <TableCell>{product.unit}</TableCell>
-                </TableRow>
+                  <StyledTableCell align="center">{product.description}</StyledTableCell>
+                  <StyledTableCell align="center">{product.color}</StyledTableCell>
+                  <StyledTableCell align="center">{product.unit}</StyledTableCell>
+                </StyledTableRow>
               )}
             </React.Fragment>
           )}

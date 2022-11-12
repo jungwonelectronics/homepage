@@ -1,21 +1,22 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { header, list } from '../../constant/carrierList';
+import { StyledPaper, StyledTableCell, StyledTableRow } from './tableStyled';
 
 export default function CarrierTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="Carriet developer product list">
+    <TableContainer component={StyledPaper}>
+      <Table aria-label="Carriet developer product list" size="small">
         <TableHead>
           <TableRow>
             {header.map(item =>
-              <TableCell key={item.id}>{item.label}</TableCell>
+              <StyledTableCell align={item.id === 'useInList' ? 'left' : 'center'} key={item.id}>
+                {item.label}
+              </StyledTableCell>
             )}
           </TableRow>
         </TableHead>
@@ -23,26 +24,31 @@ export default function CarrierTable() {
           {list.map(carrier => 
             <React.Fragment key={carrier.brand}>
               {carrier.productList.map((product, productIndex) =>
-                <TableRow key={`table-row-${productIndex}`}>
+                <StyledTableRow key={`table-row-${productIndex}`}>
                   {productIndex === 0 && (
-                    <TableCell
+                    <StyledTableCell align="center"
                       rowSpan={carrier.productList.length}
                     >
                       {carrier.brand}
-                    </TableCell>
+                    </StyledTableCell>
                   )}
-                  <TableCell>{product.machine}</TableCell>
-                  <TableCell>{product.jweCode}</TableCell>
-                  <TableCell>{product.model}</TableCell>
-                  <TableCell sx={{ wordBreak: 'break-word' }}>
+                  <StyledTableCell align="center">{product.machine}</StyledTableCell>
+                  <StyledTableCell align="center">{product.jweCode}</StyledTableCell>
+                  <StyledTableCell align="center">
+                    <div>{product.model}</div>
+                    {product.model2 && (
+                      <div>{product.model2}</div>
+                    )}
+                    {product.remarks && (
+                      <div>({product.remarks})</div>
+                    )}
+                  </StyledTableCell>
+                  <StyledTableCell>
                     {product.useInList.map(useIn => 
                       <div key={useIn}>{useIn}</div>
                     )}
-                  </TableCell>
-                  {/* {product.remarks && (
-                    <TableCell>{product.remarks}</TableCell>
-                  )} */}
-                </TableRow>
+                  </StyledTableCell>
+                </StyledTableRow>
               )}
             </React.Fragment>
           )}

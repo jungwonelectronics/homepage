@@ -26,6 +26,9 @@ export const WrapperStyled = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
 `;
 
 export const LinkWrapperStyled = styled.div`
@@ -34,7 +37,6 @@ export const LinkWrapperStyled = styled.div`
   display: flex;
   color: #999;
   @media (max-width: 425px) {
-    font-size: 12px;
     margin-bottom: 5px;
   }
 `;

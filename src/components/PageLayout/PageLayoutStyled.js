@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -64,4 +64,9 @@ export const PageStyled = styled.div`
   @media (max-width: 425px) {
     font-size: 14px;
   }
+  ${({ widthAuto }) => widthAuto && css`
+    @media (max-width: 1280px) {
+      width: 90% !important;
+    }
+  `}
 `;

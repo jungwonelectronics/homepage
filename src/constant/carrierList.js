@@ -4,7 +4,6 @@ export const header = [
   { id: 'jweCode', label: 'JWE Code' },
   { id: 'model', label: 'Model' },
   { id: 'useInList', label: 'Recommended Machine for use In' },
-  // { id: 'remarks', label: 'Remarks' }
 ];
 
 export const list = [
@@ -14,19 +13,19 @@ export const list = [
       {
         machine: 'MFP/M',
         jweCode: 'XD33',
-        model: 'SCX 6555(Developer)',
+        model: 'SCX 6555',
         useInList: [
-          'Xerox WorkCenter 4260',
-          'SCX 6545/6555',
+          'Xerox WorkCenter 4260, SCX 6545, SCX 6555',
         ],
+        remarks: 'Developer'
       },
       {
           machine: 'MFP/M',
           jweCode: 'MD1',
           model: 'ML8951',
           useInList: [
-            'ML8951(A3)/8851(A4)',
-            'SP6100/6200/6300/4100/4200/4300',
+            'ML8951(A3), ML8851(A4)',
+            'SP6100/6200/6300, SP4100/4200/4300',
           ],
         },
       {
@@ -34,8 +33,7 @@ export const list = [
         jweCode: 'TC32',
         model: 'SL-X3220',
         useInList: [
-          'SL-X3220/3280/4220/4300',
-          'CLX-9206/9201',
+          'SL-X3220/3280, SL-X4220/4300, CLX-9206/9201',
         ],
       },
     ],
@@ -46,34 +44,37 @@ export const list = [
       {
         machine: 'Printer/M',
         jweCode: 'TD-9',
-        model: 'Phaser5500(Developer)',
+        model: 'Phaser5500',
         useInList: [
           'Phaser 5500/5550/5520/5230',
-          'Tally 9050',
-          'Lexmark W840',
-          'Dell 7330',
-          'IBM Inforprinter 1585',
+          'Tally 9050, Lexmark W840',
+          'Dell 7330, IBM Inforprinter 1585',
           'Docu Printer 405/505/4060/5060',
         ],
+        remarks: 'Developer',
       },
       {
         machine: 'Copier/M',
         jweCode: 'TD-9',
-        model: 'WorkCenter M123(Developer)',
+        model: 'WorkCenter M123',
         useInList: [
-          'WorkCentre M133/M128/M123/M118/5230/5225/5222',
+          'WorkCentre M133/M128/M123/M118',
+          'WorkCentre 5230/5225/5222',
           'DocuCentre II 5010/4000',
-          'DocuCentre 450I/550I/336/286/236/186/156/A285/A235/2005/2055/3005/2007/3007',
+          'DocuCentre 450I/550I/336/286/236/186/156/A285/A235',
+          'DocuCentre 2005/2055/3005/2007/3007',
           'CopyCentre C133/C128/C123/C118',
         ],
+        remarks: 'Developer',
       },
       {
         machine: 'MFP/M',
         jweCode: 'TC40',
-        model: 'X4110(Carrier)',
+        model: 'X4110',
         useInList: [
           'Xerox 4110/4127/4595/4590',
         ],
+        remarks: 'Carrier',
       },
       {
         machine: 'Printer/M',
@@ -81,10 +82,8 @@ export const list = [
         model: 'Phaser5500',
         useInList: [
           'Phaser 5500/5550/5520/5230',
-          'Tally 9050',
-          'Lexmark W840',
-          'Dell 7330',
-          'IBM Inforprinter 1585',
+          'Tally 9050, Lexmark W840',
+          'Dell 7330, IBM Inforprinter 1585',
           'Docu Printer 405/505/4060/5060',
         ],
       },
@@ -93,9 +92,11 @@ export const list = [
         jweCode: 'TC-19',
         model: 'WorkCenter M123',
         useInList: [
-          'WorkCentre M133/M128/M123/M118/5230/5225/5222',
+          'WorkCentre M133/M128/M123/M118',
+          'WorkCentre 5230/5225/5222',
           'DocuCentre II 5010/4000',
-          'DocuCentre 450I/550I/336/286/236/186/156/A285/A235/2005/2055/3005/2007/3007',
+          'DocuCentre 450I/550I/336/286/236/186/156/A285/A235',
+          'DocuCentre 2005/2055/3005/2007/3007',
           'CopyCentre C133/C128/C123/C118',
         ],
       },
@@ -104,7 +105,7 @@ export const list = [
         jweCode: 'TC43',
         model: 'DCC2270',
         useInList: [
-          'DCC 2270/2275/3370/3375/4470/5570',
+          'DCC2270/DCC2275/DCC3370/DCC3375/DCC4470/DCC5570',
         ],
       },
     ],
@@ -117,7 +118,9 @@ export const list = [
         jweCode: 'TC23s',
         model: 'BHC652',
         useInList: [
-          'Bizhub C652/C552/C452/C450/351/350/C250/252',
+          'Bizhub C652/C552/C452',
+          'Bizhub C450/351/350',
+          'Bizhub C250/252',
         ],
       },
       {
@@ -149,9 +152,8 @@ export const list = [
         jweCode: 'TC40/TD40',
         model: 'Bizhub 350',
         useInList: [
-          'Bizhub 227/287/367/200/222/250/282/350/362',
-          'BHC 250i/D450',
-          'BH 283/263/423(TN217)',
+          'Bizhub 227/287/367, BHC 250i/D450',
+          'Bizhub 200/222/250/282/350/362, BH 283/263/423(TN217)',
         ],
         remarks: 'Carrier, Developer',
       },
@@ -160,7 +162,7 @@ export const list = [
         jweCode: 'TC41/TD41',
         model: 'BHC224',
         useInList: [
-          'BHC 224/284/364(TN321)/C225/258/368(TN324)',
+          'BHC 224/284/364(TN321), BHC C225/258/368(TN324)',
         ],
         remarks: 'Carrier, Developer',
       },
@@ -191,7 +193,7 @@ export const list = [
         model: 'iRC3200',
         useInList: [
           'iRC 2620/3220/3200/2600, GPR11',
-          'iRC 4580,5180,4080,5185,4040,5080,5151',
+          'iRC 4580/5180/4080/5185/4040/5080/5151',
         ],
       },
       {
@@ -207,7 +209,7 @@ export const list = [
         jweCode: 'TC33',
         model: 'iR ACVC3320',
         useInList: [
-          'IR ACVC3320/3325/3330, NPG67',
+          'IR ACVC 3320/3325/3330, NPG67',
         ],
       },
     ],
@@ -220,7 +222,14 @@ export const list = [
         jweCode: 'TC51',
         model: 'Aficio2035',
         useInList: [
-          'Aficio MP1600/2000/2352/2500/2510/2550/2851/2852/3010/3350/3351/3352/1035/1045/2035/2045/3035/3045/1060/1075/2051/2060/2075/5500/6000/6001/6002/6500/7000/7001/7002/7500/7502/8000/8001/9001/9002/1085/1105/2090/2105',
+          'Aficio MP 1600/2000/2352/2500/2510/2550',
+          'Aficio MP 2851/2852/3010/3350/3351/3352',
+          'Aficio 1035/1045, Aficio 2035/2045/3035/3045',
+          'Aficio 1060/1075/2051/2060/2075',
+          'Aficio MP 5500/6000/6001/6002/6500/7000',
+          'Aficio MP 7001/7002/7500/7502/8000/8001',
+          'Aficio MP 9001/9002',
+          'Aficio 1085/1105/2090/2105',
           'Toshiba e studio 1050/900',
         ],
       },
@@ -229,16 +238,18 @@ export const list = [
         jweCode: 'TC50',
         model: 'Aficio1515',
         useInList: [
-          'Aficio 1015/1018/220/270/2015/2016/2018/2020/3025/3030',
+          'Aficio 1015/1018, Aficio 220/270',
+          'Aficio 2015/2016/2018/2020/3025/3030',
         ],
       },
       {
         machine: 'MFP/M',
         jweCode: 'MC51',
-        model: 'Samsung ML8951(A3)/Ricoh SP6100',
+        model: 'Samsung ML8951(A3)',
+        model2: 'Ricoh SP6100',
         useInList: [
-          'Samsung ML8951(A3)/ML8851(A4)',
-          'Ricoh SP6100/6200/6300/4100/4200/4300',
+          'Samsung ML8951(A3), ML8851(A4)',
+          'Ricoh SP 6100/6200/6300, SP 4100/4200/4300',
         ],
       },
     ],
@@ -249,19 +260,29 @@ export const list = [
       {
         machine: 'MFP/M',
         jweCode: 'CD55',
-        model: 'Aficio2035 Developer',
+        model: 'Aficio2035',
         useInList: [
-          'Aficio MP1600/2000/2352/2500/2510/2550/2851/2852/3010/3350/3351/3352/1035/1045/2035/2045/3035/3045/1060/1075/2051/2060/2075/5500/6000/6001/6002/6500/7000/7001/7002/7500/7502/8000/8001/9001/9002/1085/1105/2090/2105',
+          'Aficio MP 1600/2000/2352/2500/2510/2550',
+          'Aficio MP 2851/2852/3010/3350/3351/3352',
+          'Aficio 1035/1045, Aficio 2035/2045/3035/3045',
+          'Aficio 1060/1075/2051/2060/2075',
+          'Aficio MP 5500/6000/6001/6002/6500/7000',
+          'Aficio MP 7001/7002/7500/7502/8000/8001',
+          'Aficio MP 9001/9002',
+          'Aficio 1085/1105/2090/2105',
           'Toshiba e studio 1050/900',
         ],
+        remarks: 'Developer'
       },
       {
         machine: 'MFP/M',
         jweCode: 'TD50',
-        model: 'Aficio1515 Developer',
+        model: 'Aficio1515',
         useInList: [
-          'Aficio 1015/1018/220/270/2015/2016/2018/2020/3025/3030'
+          'Aficio 1015/1018, Aficio 220/270',
+          'Aficio 2015/2016/2018/2020/3025/3030'
         ],
+        remarks: 'Developer'
       },
     ],
   },
