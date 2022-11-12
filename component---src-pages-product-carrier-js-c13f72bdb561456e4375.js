@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjungwon_electronics_homepage=self.webpackChunkjungwon_electronics_homepage||[]).push([[516],{6553:function(e,n,r){r.r(n);var t=r(7294),a=r(662);n.default=function(){var e="Company > Carrier";return t.createElement(a.Z,{pageTitle:e},t.createElement("h1",null,e))}}}]);
-//# sourceMappingURL=component---src-pages-product-carrier-js-c13f72bdb561456e4375.js.map

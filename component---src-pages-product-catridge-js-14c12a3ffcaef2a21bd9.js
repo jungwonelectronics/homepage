@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjungwon_electronics_homepage=self.webpackChunkjungwon_electronics_homepage||[]).push([[488],{9798:function(e,n,t){t.r(n);var a=t(7294),c=t(348);n.default=function(){return a.createElement(c.Z,{pageTitle:"cartridge"},a.createElement("div",null,"Catridge Page"))}}}]);
-//# sourceMappingURL=component---src-pages-product-catridge-js-14c12a3ffcaef2a21bd9.js.map

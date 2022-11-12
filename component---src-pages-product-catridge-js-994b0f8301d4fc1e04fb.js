@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjungwon_electronics_homepage=self.webpackChunkjungwon_electronics_homepage||[]).push([[488],{9798:function(e,n,t){t.r(n);var a=t(7294),c=t(662);n.default=function(){var e="Company > Catridge";return a.createElement(c.Z,{pageTitle:e},a.createElement("h1",null,e))}}}]);
-//# sourceMappingURL=component---src-pages-product-catridge-js-994b0f8301d4fc1e04fb.js.map
