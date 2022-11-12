@@ -33,12 +33,8 @@ export const WrapperStyled = styled.div`
 
 export const LinkWrapperStyled = styled.div`
   margin-bottom: 10px;
-  font-size: 16px;
   display: flex;
   color: #999;
-  @media (max-width: 425px) {
-    margin-bottom: 5px;
-  }
 `;
 
 export const LinkStyled = styled.p`

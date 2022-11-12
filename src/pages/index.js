@@ -20,7 +20,7 @@ const IndexPage = () => {
       <ImageWrapperStyled>
         <StaticImage
           alt="Jungwon Electronics Factory imgae"
-          src="../images/factory.jpg"
+          src="../images/main2.jpg"
         />
       </ImageWrapperStyled>
     </PageLayout>
