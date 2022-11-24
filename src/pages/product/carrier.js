@@ -4,7 +4,7 @@ import CarrierTable from '../../components/table/CarrierTable';
 
 const CarrierPage = () => {
   return (
-    <PageLayout pageTitle="carrierAndDeveloper" widthAuto>
+    <PageLayout pageTitle="carrierAndDeveloper" type="Table">
       <CarrierTable />
     </PageLayout>
   );

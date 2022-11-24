@@ -4,7 +4,7 @@ import CartridgeTable from '../../components/table/CartridgeTable';
 
 const CartridgePage = () => {
   return (
-    <PageLayout pageTitle="cartridge" widthAuto>
+    <PageLayout pageTitle="cartridge" type="Table">
       <CartridgeTable />
     </PageLayout>
   );

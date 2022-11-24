@@ -21,7 +21,7 @@ const theme = createTheme({
   },
 });
 
-const PageLayout = ({ pageTitle, children, widthAuto }) => {
+const PageLayout = ({ pageTitle, children, type }) => {
   const { lang } = React.useContext(LanguageContext);
   const isHome = pageTitle === 'Home';
   return (
@@ -32,7 +32,7 @@ const PageLayout = ({ pageTitle, children, widthAuto }) => {
           <GlobalStyle />
           <Wrapper>
             <Header menu={menu} />
-            <PageStyled widthAuto={widthAuto}>
+            <PageStyled type={type}>
               {!isHome && <SubTitle pageTitle={pageTitle} menu={menu} />}
               {children}
             </PageStyled>

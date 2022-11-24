@@ -11,7 +11,7 @@ const ContactPage = () => {
         address="충청남도 아산시 둔포면 아산밸리동로 295, 3동"
         call="041-532-8752"
         fax="041-532-8751"
-        mail="www.koreacarrier.co.kr"
+        mail="msshim-08@koreacarrier.co.kr"
       />
     </PageLayout>
   );

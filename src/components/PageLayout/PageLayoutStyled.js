@@ -64,9 +64,18 @@ export const PageStyled = styled.div`
   @media (max-width: 425px) {
     font-size: 14px;
   }
-  ${({ widthAuto }) => widthAuto && css`
+  ${({ type }) => type && type === 'Table' && css`
     @media (max-width: 1280px) {
       width: 90% !important;
+    }
+  `}
+  ${({ type }) => type && type === 'Main' && css`
+    /* width: 1280px !important; */
+    width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+    @media (max-width: 1280px) {
+      width: 100% !important;
     }
   `}
 `;
