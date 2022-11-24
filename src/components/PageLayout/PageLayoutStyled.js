@@ -74,6 +74,7 @@ export const PageStyled = styled.div`
     width: 100% !important;
     padding-left: 0;
     padding-right: 0;
+    padding-top: 0;
     @media (max-width: 1280px) {
       width: 100% !important;
     }
