@@ -8,6 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FaxIcon from '@mui/icons-material/Fax';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 const ICON_LIST = {
   menu: Menu,
@@ -18,6 +19,7 @@ const ICON_LIST = {
   location: LocationOnIcon,
   fax: FaxIcon,
   copy: ContentCopyIcon,
+  backspace: KeyboardBackspaceIcon,
 }
 
 export default function Icon({ name, size, color, margin, ...rest }) {

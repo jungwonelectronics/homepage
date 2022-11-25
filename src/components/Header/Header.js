@@ -12,10 +12,11 @@ import { languageOptions } from '../../constant/language';
 import Logo from '../../images/logo.png';
 import {
   HeaderStyled, LogoWrapperStyled, LogoStyled, LanguageWrapperStyled, HideMenuStyled,
+  BackspaceIconWrapper,
 } from './HeaderStyled';
 
 
-export default function Header({ menu }) {
+export default function Header({ menu, isHome }) {
   const { lang, language, onChangeLanguage } = React.useContext(LanguageContext);
   return (
     <HeaderStyled>
@@ -36,7 +37,10 @@ export default function Header({ menu }) {
           sx={{ minWidth: '101px' }}
         />
       </LanguageWrapperStyled>
-      <HideMenuStyled>
+      <BackspaceIconWrapper isHome={isHome}>
+        <IconButton name="backspace" color="#555" onClick={() => navigate(-1)} />
+      </BackspaceIconWrapper>
+      <HideMenuStyled isHome={isHome}>
         <Menu
           id="language-select"
           Button={<IconButton name="language" color="#555" />}
@@ -48,12 +52,19 @@ export default function Header({ menu }) {
           anchor="right"
           Button={<IconButton name="menu" color="#555" />}
         >
-          <List
-            sx={{ width: '250px' }}
-            list={menu}
-            lang={lang}
-            onClickListItem={id => navigate(`/${id.replace('_', '/')}`)}
-          />
+          <>
+            <LogoStyled
+              onClick={() => { navigate('/') }}
+            >
+              <img src={Logo} alt="Logo" width="120px" />
+            </LogoStyled>
+            <List
+              sx={{ width: '250px' }}
+              list={menu}
+              lang={lang}
+              onClickListItem={id => navigate(`/${id.replace('_', '/')}`)}
+            />
+          </>
         </Drawer>
       </HideMenuStyled>
     </HeaderStyled>

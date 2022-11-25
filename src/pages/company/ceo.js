@@ -73,7 +73,7 @@ const CEOPage = () => {
   return (
     <PageLayout pageTitle='CEOGreetings'>
       <TitleArea theme={theme}>
-        <Title>원칙을 세우며 발전해나가는 기업, 정원전자 입니다.</Title>
+        <Title>원칙을 바로 세우며 발전하는 기업, 정원전자 입니다.</Title>
       </TitleArea>
       <Paragraph sentences={[
         '안녕하십니까?',

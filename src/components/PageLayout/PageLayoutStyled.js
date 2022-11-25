@@ -60,6 +60,7 @@ export const PageStyled = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     font-size: 16px;
+    min-height: calc(100vh - 116px);
   }
   @media (max-width: 425px) {
     font-size: 14px;

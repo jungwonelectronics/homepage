@@ -46,7 +46,7 @@ const IndexPage = () => {
       <ImageWrapper>
         <BGImage />
         <TitleWrapper>
-          <SubTitle>원칙을 세우며 발전해나가는 기업</SubTitle>
+          <SubTitle>원칙을 바로 세우며 발전하는 기업</SubTitle>
           <Title>정원전자</Title>
         </TitleWrapper>
       </ImageWrapper>

@@ -31,7 +31,7 @@ const PageLayout = ({ pageTitle, children, type }) => {
         <LanguageProvider>
           <GlobalStyle />
           <Wrapper>
-            <Header menu={menu} />
+            <Header menu={menu} isHome={isHome} />
             <PageStyled type={type}>
               {!isHome && <SubTitle pageTitle={pageTitle} menu={menu} />}
               {children}
