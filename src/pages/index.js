@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from 'styled-components';
 import PageLayout from '../components/PageLayout/PageLayout';
+import Summary from '../components/Summary/Summary';
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -10,7 +11,7 @@ const ImageWrapper = styled.div`
 `;
 
 const BGImage = styled.div`
-  background-image: url(/images/3.jpg);
+  background-image: url(/images/main.jpg);
   width: 100%;
   height: 400px;
   background-repeat: no-repeat;
@@ -39,7 +40,6 @@ const SubTitle = styled.span`
   font-size: 18px;
 `;
 
-
 const IndexPage = () => {
   return (
     <PageLayout pageTitle="Home" type="Main">
@@ -50,6 +50,14 @@ const IndexPage = () => {
           <Title>정원전자</Title>
         </TitleWrapper>
       </ImageWrapper>
+      <Summary
+        data={[
+          { icon: 'manufacture', title: '사업 소개' },
+          { icon: 'timeline', title: '연혁' },
+          { icon: 'list', title: '제품 소개' },
+          { icon: 'map', title: '찾아오는 길' },
+        ]}
+      />
     </PageLayout>
   );
 }

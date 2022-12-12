@@ -29,7 +29,7 @@ const IntroductionPage = () => {
         ]}
       />
       <ProductIntroduction
-        title="둘째, PCU (Photo Conductor Unit)"
+        title="둘째, PCU(Photo Conductor Unit)"
         introduction="- 리코 Aficio 정품 PCU 및 재제조 PCU를 생산 수출합니다."
         images={[
           (<StaticImage
