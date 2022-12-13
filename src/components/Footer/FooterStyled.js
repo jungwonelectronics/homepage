@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const FooterStyled = styled.footer`
   height: 116px;
@@ -8,9 +8,6 @@ export const FooterStyled = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 425px) {
-    line-height: 18px;
-  }
 `;
 
 export const WrapperStyled = styled.div`
@@ -29,35 +26,45 @@ export const WrapperStyled = styled.div`
   @media (max-width: 425px) {
     font-size: 12px;
   }
+  ${({ type }) => type && type === 'Main' && css`
+    width: 100% !important;
+    margin: 0 45px;
+    @media (max-width: 425px) {
+      margin: 0 10px;
+    }
+    @media (max-width: 768px) {
+      padding: 20px 0px;
+    }
+    @media (max-width: 425px) {
+      padding: 0;
+    }
+  `}
 `;
 
-export const LinkWrapperStyled = styled.div`
-  margin-bottom: 10px;
-  display: flex;
-  color: #999;
-`;
-
-export const LinkStyled = styled.p`
+export const NameStyled = styled.p`
+  font-size: 20px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
   margin: 0;
-  color: #999;
-  margin: 0 10px;
-  &:hover {
-    color: #fff;
-    cursor: pointer;
-  }
-  &:nth-child(1) {
-    margin-left: 0;
+  margin-bottom: 10px;
+  @media (max-width: 425px) {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 3px;
   }
 `;
 
 export const CopyrightStyled = styled.p`
   margin: 0;
   color: #999;
+  word-break: break-word;
 `;
 
 export const ContactStyled = styled.p`
   margin: 0;
   color: #fff;
+  word-break: break-word;
   a {
     color: #fff;
   }

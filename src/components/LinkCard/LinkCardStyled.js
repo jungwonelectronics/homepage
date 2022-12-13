@@ -1,17 +1,15 @@
-import * as React from "react";
 import styled from 'styled-components';
-import Icon from '../meterial/Icon';
 
-const SummaryWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin: 40px 0;
+  margin-top: 40px;
   flex-wrap: wrap;
 `;
 
-const SummaryBox = styled.div`
+export const Card = styled.div`
   width: 250px;
   height: 250px;
   display: flex;
@@ -29,12 +27,15 @@ const SummaryBox = styled.div`
     cursor: pointer;
   }
   position: relative;
+  @media (max-width: 1280px) {
+    width: 22.5%;
+  }
   @media (max-width: 1024px) {
-    width: 25%;
+    width: 22.5%;
     height: 225px;
   }
   @media (max-width: 768px) {
-    width: 50%;
+    width: 45%;
     &:nth-child(1) {
       background-color: #364A9C;
       color: #fff;
@@ -66,7 +67,7 @@ const SummaryBox = styled.div`
   }
 `;
 
-const BGImage = styled.div`
+export const BGImage = styled.div`
   position: absolute;
   opacity: 0.25;
   background-image: url(/images/summary1.jpg);
@@ -79,7 +80,7 @@ const BGImage = styled.div`
   }
 `;
 
-const BGImage1 = styled.div`
+export const BGImage1 = styled.div`
   position: absolute;
   opacity: 0.25;
   background-image: url(/images/summary2.jpg);
@@ -92,7 +93,7 @@ const BGImage1 = styled.div`
   }
 `;
 
-const BGImage2 = styled.div`
+export const BGImage2 = styled.div`
   position: absolute;
   opacity: 0.25;
   background-image: url(/images/summary3.jpg);
@@ -105,7 +106,7 @@ const BGImage2 = styled.div`
   }
 `;
 
-const BGImage3 = styled.div`
+export const BGImage3 = styled.div`
   position: absolute;
   opacity: 0.25;
   background-image: url(/images/summary4.jpg);
@@ -118,37 +119,7 @@ const BGImage3 = styled.div`
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   margin-top: 5px;
   text-align: center;
 `;
-
-const getBGImage = index => {
-  if (index === 0) {
-    return <BGImage />;
-  } else if (index === 1) {
-    return <BGImage1 />;
-  } else if (index === 2) {
-    return <BGImage2/>;
-  } else if (index === 3) {
-    return <BGImage3 />;
-  }
-  return null;
-}
-
-
-const Summary = ({ data }) => {
-  return (
-    <SummaryWrapper>
-      {data.map((item, index) => (
-        <SummaryBox key={`summary-box-${index}`}>
-          {getBGImage(index)}
-          <Icon name={item.icon} size="42" color={index % 2 === 0 ? '#fff' : '#000'} />
-          <Title>{item.title}</Title>
-        </SummaryBox>
-      ))}
-    </SummaryWrapper>
-  );
-}
-
-export default Summary;

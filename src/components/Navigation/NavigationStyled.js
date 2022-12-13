@@ -5,7 +5,7 @@ export const NavStyled = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     display: none;
   } 
 `;

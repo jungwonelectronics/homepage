@@ -12,10 +12,12 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import FactoryOutlinedIcon from '@mui/icons-material/FactoryOutlined';
 import Manufacturing from '@mui/icons-material/PrecisionManufacturingOutlined';
 import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
-import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import Map from '@mui/icons-material/MapOutlined';
+import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
+import LocalFloristOutlinedIcon from '@mui/icons-material/LocalFloristOutlined';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+
 
 const ICON_LIST = {
   menu: Menu,
@@ -30,10 +32,11 @@ const ICON_LIST = {
   factory: FactoryOutlinedIcon,
   manufacture: Manufacturing,
   list: ListAltOutlinedIcon,
-  history: HistoryEduOutlinedIcon,
-  arrowCircleRight: ArrowCircleRightOutlinedIcon,
   timeline: TimelineIcon,
   map: Map,
+  handShake: HandshakeOutlinedIcon,
+  eco: LocalFloristOutlinedIcon,
+  add: AddCircleOutlineOutlinedIcon,
 }
 
 export default function Icon({ name, size, color, margin, ...rest }) {

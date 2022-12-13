@@ -36,7 +36,7 @@ const PageLayout = ({ pageTitle, children, type }) => {
               {!isHome && <SubTitle pageTitle={pageTitle} menu={menu} />}
               {children}
             </PageStyled>
-            <Footer />
+            <Footer type={type} />
           </Wrapper>
         </LanguageProvider>
       </ThemeProvider>

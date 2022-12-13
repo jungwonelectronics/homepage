@@ -1,7 +1,9 @@
 import * as React from "react";
 import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 import PageLayout from '../components/PageLayout/PageLayout';
-import Summary from '../components/Summary/Summary';
+import LinkCard from '../components/LinkCard/LinkCard';
+import Ideology from '../components/Ideology/Ideology';
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -40,6 +42,18 @@ const SubTitle = styled.span`
   font-size: 18px;
 `;
 
+const HandShakeImageWrapper = styled.div`
+  max-width: 1000px;
+  margin-top: 60px;
+  width: 90%;
+  border-radius: 50%;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  } 
+`;
+
+
 const IndexPage = () => {
   return (
     <PageLayout pageTitle="Home" type="Main">
@@ -50,14 +64,27 @@ const IndexPage = () => {
           <Title>정원전자</Title>
         </TitleWrapper>
       </ImageWrapper>
-      <Summary
+      <LinkCard
         data={[
-          { icon: 'manufacture', title: '사업 소개' },
-          { icon: 'timeline', title: '연혁' },
-          { icon: 'list', title: '제품 소개' },
-          { icon: 'map', title: '찾아오는 길' },
+          { icon: 'factory', title: '사업 소개', link: '/company/introduction' },
+          { icon: 'timeline', title: '연혁', link: '/company/history' },
+          { icon: 'list', title: '제품 소개', link: '/product/carrier' },
+          { icon: 'map', title: '오시는 길', link: '/contact' },
         ]}
       />
+      <Ideology
+        data={[
+          { icon: 'manufacture', title: '기술', subTitle: '최고의 기술 기반' },
+          { icon: 'handShake', title: '고객', subTitle: '최상의 제품과 서비스를 통한 고객 감동' },
+          { icon: 'eco', title: '환경', subTitle: '환경을 생각하는 경영' },
+        ]}
+      />
+      <HandShakeImageWrapper>
+        <StaticImage
+          alt="picture 3"
+          src="../images/hand-shake.jpg"
+        />
+      </HandShakeImageWrapper>
     </PageLayout>
   );
 }
