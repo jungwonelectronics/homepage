@@ -1,6 +1,35 @@
 import React, { useState } from 'react';
 import { default as MeterialMenu } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { styled } from '@mui/material/styles';
+
+const StyledMenu = styled(MeterialMenu)(({ theme }) => ({
+  '& .MuiPaper-root': {
+    borderRadius: 0,
+    marginTop: 1,
+    minWidth: 180,
+    boxShadow: 'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
+    '& .MuiMenu-list': {
+      padding: '0',
+      borderBottom: '2px solid #364A9C',
+    },
+    '& .MuiMenuItem-root': {
+      '& .MuiSvgIcon-root': {
+        fontSize: 18,
+        color: theme.palette.text.secondary,
+        marginRight: theme.spacing(1.5),
+      },
+      // '&.Mui-selected': {
+      //   backgroundColor: theme.palette.primary.main,
+      //   color: '#fff',
+      // },
+      '&:active': {
+        backgroundColor: theme.palette.primary.main,
+        color: '#fff',
+      },
+    },
+  },
+}));
 
 export default function Menu({
   id, Button, menus, onClick, value,
@@ -22,7 +51,7 @@ export default function Menu({
         'aria-expanded': open ? 'true' : undefined,
         onClick: handleClick,
       })}
-      <MeterialMenu
+      <StyledMenu
         id={`${id}-menu`}
         anchorEl={anchorEl}
         open={open}
@@ -48,7 +77,7 @@ export default function Menu({
             {item.label}
           </MenuItem>
         ))}
-      </MeterialMenu>
+      </StyledMenu>
     </>
   );
 }

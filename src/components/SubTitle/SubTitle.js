@@ -9,31 +9,26 @@ import {
 } from './SubTitleStyled';
 
 const getMenu = (path, menu) => {
-  const currentMenu = [];
+  const currentMenuList = [];
   if (path) {
-    const [parent, child] = path.split('/').splice(1, 3);
+    const [parent, child] = path.split('/').splice(1, 2);
     const parentMenu = menu.find(menuItem => menuItem.id === parent);
     if (parentMenu) {
-      if (parentMenu.childs) {
-        currentMenu.push({
-          ...parentMenu,
-          childs: parentMenu.childs.filter(menuItem => menuItem.id.split('_')[1] !== child),
-        });
-      } else {
-        currentMenu.push(parentMenu);
-      }
+      currentMenuList.push(parentMenu);
       if (child) {
         const childMenu = parentMenu.childs.find(menuItem => menuItem.id.split('_')[1] === child);
-        currentMenu.push(childMenu);
+        currentMenuList.push(childMenu);
       }
     }
   }
-  return currentMenu;
+  return currentMenuList;
 }
 
 const SubTitle = ({ pageTitle, menu }) => {
   const { lang } = React.useContext(LanguageContext);
-  const currentMenu = getMenu(typeof window !== 'undefined' ? window.location.pathname : '', menu);
+  const currentMenuList = getMenu(typeof window !== 'undefined' ? window.location.pathname : '', menu);
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const currentMenu = currentPath.split('/').splice(1, 2).join('_');
   return (
     <WrapperStyled>
       <h2><Language langKey={pageTitle} /></h2>
@@ -43,12 +38,12 @@ const SubTitle = ({ pageTitle, menu }) => {
           color="#555"
           onClick={() => { navigate('/') }}
         />
-        {currentMenu.map((menu, index) => (
+        {currentMenuList.map((menu, index) => (
           <React.Fragment key={menu.id}>
             <SpanStyled isFirst={index === 0}>
               {'/'}
             </SpanStyled>
-            {(currentMenu.length === 1 || index === 0) ? (
+            {(currentMenuList.length === 1 || index === 0) ? (
               <Language langKey={menu.langKey} />
             ) : (
               <Menu
@@ -58,7 +53,8 @@ const SubTitle = ({ pageTitle, menu }) => {
                     <Language langKey={menu.langKey} />
                   </MenuItemStyled>
                 )}
-                menus={currentMenu[0].childs.map(childItem => ({ ...childItem, label: lang[childItem.langKey] }))}
+                value={currentMenu}
+                menus={currentMenuList[0].childs.map(childItem => ({ ...childItem, label: lang[childItem.langKey] }))}
                 onClick={id => navigate(`/${id.replace('_', '/')}`)}
               />
             )}

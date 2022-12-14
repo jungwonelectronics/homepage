@@ -60,10 +60,11 @@ export default function Header({ menu, isHome }) {
                 <img src={Logo} alt="Logo" width="120px" />
               </LogoStyled>
               <Menu
-                id="mobile-language-change"
+                id="mobile-language-select"
                 Button={(
                   <IconButton name="language" color="#555" />
                 )}
+                value={language}
                 menus={languageOptions}
                 onClick={id => onChangeLanguage(id)}
               />

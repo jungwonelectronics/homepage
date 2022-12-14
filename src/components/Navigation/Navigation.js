@@ -8,6 +8,8 @@ import {
 } from './NavigationStyled';
 
 const Navigation = ({ menu }) => {
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const currentMenu = currentPath.split('/').splice(1, 2).join('_');
   const theme = useTheme();
   const { lang } = React.useContext(LanguageContext);
   return (
@@ -22,9 +24,10 @@ const Navigation = ({ menu }) => {
                   {lang[item.langKey]}
                 </NavMenuItemStyled>
               )}
-              // value={language}
+              value={currentMenu}
               menus={item.childs.map(childItem => ({ ...childItem, label: lang[childItem.langKey] }))}
               onClick={id => navigate(`/${id.replace('_', '/')}`)}
+              useHover
             />
           ) : (
             <NavMenuItemStyled

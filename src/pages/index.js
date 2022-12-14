@@ -43,13 +43,28 @@ const SubTitle = styled.span`
 `;
 
 const HandShakeImageWrapper = styled.div`
+  position: relative;
   max-width: 1000px;
   margin-top: 60px;
   width: 90%;
-  border-radius: 50%;
-  overflow: hidden;
   @media (max-width: 768px) {
     margin-top: 20px;
+  } 
+`;
+
+const HandShakeTitle = styled.div`
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  bottom: 8%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    font-size: 14px;
   } 
 `;
 
@@ -80,6 +95,7 @@ const IndexPage = () => {
         ]}
       />
       <HandShakeImageWrapper>
+        <HandShakeTitle>"항상 더 나은 품질을 위해 노력하겠습니다."</HandShakeTitle>
         <StaticImage
           alt="picture 3"
           src="../images/hand-shake.jpg"
