@@ -21,3 +21,12 @@ export const SpanStyled = styled.span`
     margin-left: 0;
   `}
 `;
+
+export const MenuItemStyled = styled.span`
+  cursor: pointer;
+  border-bottom: 1px solid;
+  padding: 4px 0;
+  &:hover {
+    color: #364A9C;
+  }
+`;

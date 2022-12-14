@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  margin-top: 15px;
+  margin-top: 50px;
   width: 100%;
   display: table;
 `;
 
 export const Row = styled.div`
   display: table-row;
-  height: 40px;
+  height: 45px;
 `;
 
 export const Cell = styled.div`

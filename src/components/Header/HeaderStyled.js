@@ -26,6 +26,12 @@ export const LogoWrapperStyled = styled.div`
   } 
 `;
 
+export const TopStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
 export const LogoStyled = styled.div`
   display: flex;
   cursor: pointer;

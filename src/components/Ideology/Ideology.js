@@ -34,7 +34,7 @@ const Ideology = ({ data }) => {
       </IdeologyWrapper>
       <IdeologyCardWrapper>
         {data.map((item, index) => (
-          <>
+          <React.Fragment key={`ideology-card-${index}`}>
             {index !== 0 && (
               <Icon
                 name="add"
@@ -50,7 +50,7 @@ const Ideology = ({ data }) => {
               </Circle>
               <SubTitle>{item.subTitle}</SubTitle>
             </Card>
-          </>
+          </React.Fragment>
           ))}
       </IdeologyCardWrapper>
     </Wrapper>

@@ -12,7 +12,7 @@ import { languageOptions } from '../../constant/language';
 import Logo from '../../images/logo.png';
 import {
   HeaderStyled, LogoWrapperStyled, LogoStyled, LanguageWrapperStyled, HideMenuStyled,
-  BackspaceIconWrapper,
+  BackspaceIconWrapper, TopStyled,
 } from './HeaderStyled';
 
 
@@ -53,11 +53,21 @@ export default function Header({ menu, isHome }) {
           Button={<IconButton name="menu" color="#555" />}
         >
           <>
-            <LogoStyled
-              onClick={() => { navigate('/') }}
-            >
-              <img src={Logo} alt="Logo" width="120px" />
-            </LogoStyled>
+            <TopStyled>
+              <LogoStyled
+                onClick={() => { navigate('/') }}
+              >
+                <img src={Logo} alt="Logo" width="120px" />
+              </LogoStyled>
+              <Menu
+                id="mobile-language-change"
+                Button={(
+                  <IconButton name="language" color="#555" />
+                )}
+                menus={languageOptions}
+                onClick={id => onChangeLanguage(id)}
+              />
+            </TopStyled>
             <List
               sx={{ width: '250px' }}
               list={menu}
