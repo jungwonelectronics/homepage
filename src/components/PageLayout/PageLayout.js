@@ -1,11 +1,11 @@
 import * as React from "react";
+import { Helmet } from "react-helmet"
 import { IntlProvider } from "react-intl";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { menu } from '../../constant/menu';
 import Header from '../Header/Header';
 import SubTitle from '../SubTitle/SubTitle';
 import Footer from '../Footer/Footer';
-import Language from '../Language/Language';
 import {
   GlobalStyle, Wrapper, PageStyled
 } from './PageLayoutStyled';
@@ -24,24 +24,28 @@ const theme = createTheme({
 
 const PageLayout = ({ pageTitle, children, type, pageContext }) => {
   const isHome = pageTitle === 'Home';
+  console.log('!!! pageContext.messages', pageContext.messages);
   return (
     <IntlProvider
       locale={pageContext.language}
       messages={pageContext.messages}
     >
-      <main>
+      <Helmet>
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
         <title>
           {isHome ?
-            <Language id="jungwon_electronics" />
-            : (
-              <>
-                <Language id="jungwon_electronics" />
-                {' > '}
-                <Language id={pageTitle} />
-              </>
-            )
+            pageContext.messages['jungwon_electronics']
+            : `${pageContext.messages['jungwon_electronics']} > ${pageContext.messages[pageTitle]}`
           }
         </title>
+      </Helmet>
+      <main>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <Wrapper>
