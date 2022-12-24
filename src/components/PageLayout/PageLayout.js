@@ -24,7 +24,6 @@ const theme = createTheme({
 
 const PageLayout = ({ pageTitle, children, type, pageContext }) => {
   const isHome = pageTitle === 'Home';
-  console.log('!!! pageContext.messages', pageContext.messages);
   return (
     <IntlProvider
       locale={pageContext.language}

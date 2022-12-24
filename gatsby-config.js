@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-advanced-sitemap`
   ],
 }
