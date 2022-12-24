@@ -3,7 +3,7 @@ import { navigate } from 'gatsby';
 import IconButton from '../meterial/IconButton';
 import Menu from '../meterial/Menu';
 import Language from '../Language/Language';
-import { LanguageContext } from '../../context/LanguageContext';
+import { getCurrentPageLanguage } from "../../util/translation";
 import {
   WrapperStyled, NaviWrapperStyled, SpanStyled, MenuItemStyled
 } from './SubTitleStyled';
@@ -25,18 +25,28 @@ const getMenu = (path, menu) => {
 }
 
 const SubTitle = ({ pageTitle, menu }) => {
-  const { lang } = React.useContext(LanguageContext);
-  const currentMenuList = getMenu(typeof window !== 'undefined' ? window.location.pathname : '', menu);
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  let currentLang = getCurrentPageLanguage(currentPath);
+  if (currentLang === '') currentLang = 'ko';
+  let deletedLangPath = currentPath;
+  if (currentLang === 'en') deletedLangPath = currentPath.replace('/en/', '/');
+  if (currentLang === 'de') deletedLangPath = currentPath.replace('/de/', '/');
+  const currentMenuList = getMenu(deletedLangPath, menu);
   const currentMenu = currentPath.split('/').splice(1, 2).join('_');
+  const onClickHome = () => {
+    let url = '/';
+    if (currentLang === 'en') url = '/en/';
+    if (currentLang === 'de') url = '/de/';
+    navigate(url);
+  }
   return (
     <WrapperStyled>
-      <h2><Language langKey={pageTitle} /></h2>
+      <h2><Language id={pageTitle} /></h2>
       <NaviWrapperStyled>
         <IconButton
           name="home"
           color="#555"
-          onClick={() => { navigate('/') }}
+          onClick={onClickHome}
         />
         {currentMenuList.map((menu, index) => (
           <React.Fragment key={menu.id}>
@@ -44,18 +54,23 @@ const SubTitle = ({ pageTitle, menu }) => {
               {'/'}
             </SpanStyled>
             {(currentMenuList.length === 1 || index === 0) ? (
-              <Language langKey={menu.langKey} />
+              <Language id={menu.langKey} />
             ) : (
               <Menu
                 id="navigaton-menu"
                 Button={(
                   <MenuItemStyled>
-                    <Language langKey={menu.langKey} />
+                    <Language id={menu.langKey} />
                   </MenuItemStyled>
                 )}
                 value={currentMenu}
-                menus={currentMenuList[0].childs.map(childItem => ({ ...childItem, label: lang[childItem.langKey] }))}
-                onClick={id => navigate(`/${id.replace('_', '/')}`)}
+                menus={currentMenuList[0].childs.map(childItem => ({ ...childItem, label: childItem.langKey }))}
+                onClick={id => {
+                  let url = `/${id.replace('_', '/')}`;
+                  if (currentLang === 'en') url = `/en${url}`;
+                  else if (currentLang === 'de') url = `/de${url}`;
+                  navigate(url);
+                }}
               />
             )}
           </React.Fragment>

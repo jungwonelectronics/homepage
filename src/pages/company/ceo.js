@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useTheme } from '@mui/material/styles';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import Paragraph from '../../components/Paragraph/Paragraph';
+import Language from '../../components/Language/Language';
 
 const TitleArea = styled.div`
   color: ${({ theme }) => theme.palette.primary.main};
@@ -68,29 +69,29 @@ const Card = styled.div`
 `;
 
 
-const CEOPage = () => {
+const CEOPage = ({ pageContext }) => {
   const theme = useTheme();
   return (
-    <PageLayout pageTitle='CEOGreetings'>
+    <PageLayout pageTitle='ceo' pageContext={pageContext}>
       <TitleArea theme={theme}>
-        <Title>원칙을 바로 세우며 발전하는 기업, 정원전자 입니다.</Title>
+        <Title><Language id="ceo_hello" /></Title>
       </TitleArea>
       <Paragraph sentences={[
-        '안녕하십니까?',
-        '정원전자는 최고의 기술을 기반으로 최상의 제품과 서비스를 추구하고 있으며, 아울러 환경을 생각하는 경영을 지향하고 있습니다.',
-        '아직 작지만 강한 회사, 전 세계의 고객이 믿고 찾는 제품을 개발 생산하여 한발 한발 전진하는 회사를 만들기 위하여 노력하고 있는 회사입니다.',
-        '항상 보내주시는 신뢰와 성원에 감사드리며 보답하고자 노력하겠습니다.',
-        '변함없는 애정으로 지켜봐 주시기 바랍니다.',
-        '감사합니다.',
+        'ceo_detail_0',
+        'ceo_detail_1',
+        'ceo_detail_2',
+        'ceo_detail_3',
+        'ceo_detail_4',
+        'ceo_detail_5'
       ]} />
       <SubTitleArea>
-        <p>주요 사업</p>
+        <p><Language id="main_business" /></p>
       </SubTitleArea>
       <CardArea>
-        <Card>프린터, 복사기용 캐리어, 현상제 제조 판매</Card>
-        <Card>재제조 토너 카트리지 생산 판매</Card>
-        <Card>재제조 PCU 생산 판매</Card>
-        <Card>프린터, 복사기 A/S용 부품 판매</Card>
+        <Card><Language id="main_busines_0" /></Card>
+        <Card><Language id="main_busines_1" /></Card>
+        <Card><Language id="main_busines_2" /></Card>
+        <Card><Language id="main_busines_3" /></Card>
       </CardArea>
     </PageLayout>
   );

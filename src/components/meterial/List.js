@@ -7,8 +7,9 @@ import Divider from '@mui/material/Divider';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import Language from '../Language/Language';
 
-export default function List({ list, lang, onClickListItem, ...rest }) {
+export default function List({ list, onClickListItem, ...rest }) {
   const [state, setState] = React.useState({});
   const handleClick = id => {
     setState({
@@ -22,7 +23,7 @@ export default function List({ list, lang, onClickListItem, ...rest }) {
         <React.Fragment key={`list-${item.id}`}>
           <ListItem disablePadding>
             <ListItemButton onClick={item.childs ? () => handleClick(item.id) : () => onClickListItem(item.id)}>
-              <ListItemText primary={item.langKey ? lang[item.langKey] : item.label} />
+              <ListItemText primary={item.langKey ? <Language id={item.langKey} /> : item.label} />
               {item.childs && (
               <>
                 {state[item.id] ? <ExpandLess /> : <ExpandMore />}
@@ -36,7 +37,7 @@ export default function List({ list, lang, onClickListItem, ...rest }) {
               {item.childs.map(childItem => (
               <ListItem key={`child-list-${childItem.id}`} disablePadding sx={{ pl: 2}}>
                 <ListItemButton onClick={() => onClickListItem(childItem.id)}>
-                  <ListItemText primary={childItem.langKey ? lang[childItem.langKey] : childItem.label} />
+                  <ListItemText primary={childItem.langKey ? <Language id={childItem.langKey} /> : childItem.label} />
                 </ListItemButton>
               </ListItem>
               ))}

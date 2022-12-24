@@ -1,10 +1,11 @@
 import * as React from "react";
+import { IntlProvider } from "react-intl";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { LanguageProvider, LanguageContext } from '../../context/LanguageContext';
 import { menu } from '../../constant/menu';
 import Header from '../Header/Header';
 import SubTitle from '../SubTitle/SubTitle';
 import Footer from '../Footer/Footer';
+import Language from '../Language/Language';
 import {
   GlobalStyle, Wrapper, PageStyled
 } from './PageLayoutStyled';
@@ -21,14 +22,27 @@ const theme = createTheme({
   },
 });
 
-const PageLayout = ({ pageTitle, children, type }) => {
-  const { lang } = React.useContext(LanguageContext);
+const PageLayout = ({ pageTitle, children, type, pageContext }) => {
   const isHome = pageTitle === 'Home';
   return (
-    <main>
-      <title>{isHome ? '정원전자' : `정원전자 > ${lang[pageTitle]}`}</title>
-      <ThemeProvider theme={theme}>
-        <LanguageProvider>
+    <IntlProvider
+      locale={pageContext.language}
+      messages={pageContext.messages}
+    >
+      <main>
+        <title>
+          {isHome ?
+            <Language id="jungwon_electronics" />
+            : (
+              <>
+                <Language id="jungwon_electronics" />
+                {' > '}
+                <Language id={pageTitle} />
+              </>
+            )
+          }
+        </title>
+        <ThemeProvider theme={theme}>
           <GlobalStyle />
           <Wrapper>
             <Header menu={menu} isHome={isHome} />
@@ -38,9 +52,9 @@ const PageLayout = ({ pageTitle, children, type }) => {
             </PageStyled>
             <Footer type={type} />
           </Wrapper>
-        </LanguageProvider>
-      </ThemeProvider>
-    </main>
+        </ThemeProvider>
+      </main>
+    </IntlProvider>
   );
 }
 

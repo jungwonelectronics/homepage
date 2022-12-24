@@ -1,6 +1,7 @@
 import * as React from "react";
 import { navigate } from 'gatsby';
 import Icon from '../meterial/Icon';
+import Language from '../Language/Language';
 import {
   Wrapper, Card, Title,
   BGImage, BGImage1, BGImage2, BGImage3,
@@ -27,7 +28,7 @@ const LinkCard = ({ data }) => {
         <Card key={`summary-box-${index}`} onClick={() => navigate(item.link)}>
           {getBGImage(index)}
           <Icon name={item.icon} size="42" color={index % 2 === 0 ? '#fff' : '#000'} />
-          <Title>{item.title}</Title>
+          <Title><Language id={item.title} /></Title>
         </Card>
       ))}
     </Wrapper>

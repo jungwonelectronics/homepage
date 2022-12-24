@@ -2,6 +2,7 @@ import * as React from "react";
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '../meterial/Tooltip';
 import Icon from '../meterial/Icon';
+import Language from '../Language/Language';
 import {
   Wrapper, Row, Cell, CellWrapper,
   LinkMail, LinkCall,
@@ -33,21 +34,19 @@ const Contact = (props) => {
     handleTooltipOpen(type);
     setTimeout(handleTooltipClose(type), 700);
   };
-  const {
-    address, call, fax, mail
-  } = props;
+  const {  call, fax, mail } = props;
   return (
     <Wrapper>
       <Row>
         <Cell>
           <CellWrapper isTitle>
             <Icon name="location" color="#364A9C" size="18" sx={{ marginRight: '5px' }} />
-            <span>주소</span>
+            <span><Language id="address" /></span>
           </CellWrapper>
         </Cell>
         <Cell>
           <CellWrapper>
-            <span>{address}</span>
+            <span><Language id="address_detail" /></span>
             <Tooltip
               title="copied to clipboard"
               useClick
@@ -65,7 +64,7 @@ const Contact = (props) => {
         <Cell>
           <CellWrapper isTitle>
             <Icon name="call" color="#364A9C" size="18" sx={{ marginRight: '5px' }} />
-            <span>전화</span>
+            <span><Language id="tel" /></span>
           </CellWrapper>
         </Cell>
         <Cell>
@@ -88,7 +87,7 @@ const Contact = (props) => {
         <Cell>
           <CellWrapper isTitle>
             <Icon name="fax" color="#364A9C" size="18" sx={{ marginRight: '5px' }} />
-            <span>팩스</span>
+            <span><Language id="fax" /></span>
           </CellWrapper>
         </Cell>
         <Cell>
@@ -111,7 +110,7 @@ const Contact = (props) => {
         <Cell>
           <CellWrapper isTitle>
             <Icon name="mail" color="#364A9C" size="18" sx={{ marginRight: '5px' }} />
-            <span>이메일</span>
+            <span><Language id="email" /></span>
           </CellWrapper>
         </Cell>
         <Cell>

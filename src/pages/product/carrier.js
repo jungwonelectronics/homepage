@@ -2,9 +2,9 @@ import * as React from "react";
 import PageLayout from '../../components/PageLayout/PageLayout';
 import CarrierTable from '../../components/table/CarrierTable';
 
-const CarrierPage = () => {
+const CarrierPage = ({ pageContext }) => {
   return (
-    <PageLayout pageTitle="carrierAndDeveloper" type="Table">
+    <PageLayout pageTitle="carrier_developer" type="Table" pageContext={pageContext}>
       <CarrierTable />
     </PageLayout>
   );

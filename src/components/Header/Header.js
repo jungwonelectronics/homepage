@@ -7,9 +7,9 @@ import Menu from '../meterial/Menu';
 import Drawer from '../meterial/Drawer';
 import List from '../meterial/List';
 import Navigation from '../Navigation/Navigation';
-import { LanguageContext } from '../../context/LanguageContext';
 import { languageOptions } from '../../constant/language';
 import Logo from '../../images/logo.png';
+import { getCurrentPageLanguage } from "../../util/translation";
 import {
   HeaderStyled, LogoWrapperStyled, LogoStyled, LanguageWrapperStyled, HideMenuStyled,
   BackspaceIconWrapper, TopStyled,
@@ -17,12 +17,43 @@ import {
 
 
 export default function Header({ menu, isHome }) {
-  const { lang, language, onChangeLanguage } = React.useContext(LanguageContext);
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  let currentLang = getCurrentPageLanguage(currentPath);
+  if (currentLang === '') currentLang = 'ko';
+  const onChangeLanguage = target => {
+    let url = currentPath;
+    if (target === 'ko') {
+      if (currentLang === 'en') {
+        url = currentPath.replace('/en/', '/');
+      } else if (currentLang === 'de') {
+        url = currentPath.replace('/de/', '/');
+      }
+    } else if (target === 'en') {
+      if (currentLang === 'ko') {
+        url = `/en${currentPath}`;
+      } else if (currentLang === 'de') {
+        url = url.replace('/de/', '/en/');
+      }
+    } else if (target === 'de') {
+      if (currentLang === 'ko') {
+        url = `/de${currentPath}`;
+      } else if (currentLang === 'en') {
+        url = url.replace('/en/', '/de/');
+      }
+    }
+    navigate(url);
+  }
+  const onClickHome = () => {
+    let url = '/';
+    if (currentLang === 'en') url = '/en/';
+    if (currentLang === 'de') url = '/de/';
+    navigate(url);
+  }
   return (
     <HeaderStyled>
       <LogoWrapperStyled>
         <LogoStyled
-          onClick={() => { navigate('/') }}
+          onClick={onClickHome}
         >
           <img src={Logo} alt="Logo" height="60px" />
         </LogoStyled>
@@ -31,7 +62,7 @@ export default function Header({ menu, isHome }) {
       <LanguageWrapperStyled>
         <Icon name="language" color="#555" sx={{ marginRight: '10px' }} />
         <Select
-          value={language}
+          value={currentLang}
           options={languageOptions}
           onChange={e => onChangeLanguage(e.target.value)}
           sx={{ minWidth: '101px' }}
@@ -44,7 +75,7 @@ export default function Header({ menu, isHome }) {
         <Menu
           id="language-select"
           Button={<IconButton name="language" color="#555" />}
-          value={language}
+          value={currentLang}
           menus={languageOptions}
           onClick={onChangeLanguage}
         />
@@ -55,7 +86,7 @@ export default function Header({ menu, isHome }) {
           <>
             <TopStyled>
               <LogoStyled
-                onClick={() => { navigate('/') }}
+                onClick={onClickHome}
               >
                 <img src={Logo} alt="Logo" width="120px" />
               </LogoStyled>
@@ -64,7 +95,7 @@ export default function Header({ menu, isHome }) {
                 Button={(
                   <IconButton name="language" color="#555" />
                 )}
-                value={language}
+                value={currentLang}
                 menus={languageOptions}
                 onClick={id => onChangeLanguage(id)}
               />
@@ -72,8 +103,12 @@ export default function Header({ menu, isHome }) {
             <List
               sx={{ width: '250px' }}
               list={menu}
-              lang={lang}
-              onClickListItem={id => navigate(`/${id.replace('_', '/')}`)}
+              onClickListItem={id => {
+                let url = `/${id.replace('_', '/')}`;
+                if (currentLang === 'en') url = `/en${url}`;
+                else if (currentLang === 'de') url = `/de${url}`;
+                navigate(url);
+              }}
             />
           </>
         </Drawer>

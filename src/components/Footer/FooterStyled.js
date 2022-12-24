@@ -22,9 +22,12 @@ export const WrapperStyled = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
+    font-size: 10px;
+    padding: 0 5px;
   }
   @media (max-width: 425px) {
-    font-size: 12px;
+    font-size: 10px;
+    padding: 0 5px;
   }
   ${({ type }) => type && type === 'Main' && css`
     width: 100% !important;
@@ -33,21 +36,23 @@ export const WrapperStyled = styled.div`
       margin: 0 10px;
     }
     @media (max-width: 768px) {
-      padding: 20px 0px;
+      padding: 0 3px;
     }
     @media (max-width: 425px) {
-      padding: 0;
+      padding: 0 3px;
     }
   `}
 `;
 
 export const NameStyled = styled.p`
-  font-size: 20px;
   color: #fff;
   font-weight: 800;
   font-size: 18px;
   margin: 0;
   margin-bottom: 10px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
   @media (max-width: 425px) {
     font-size: 14px;
     font-weight: 400;

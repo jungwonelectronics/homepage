@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Icon from '../meterial/Icon';
+import Language from '../Language/Language';
 import {
   Wrapper, Title, IdeologyWrapper, CircleWrapper, Circle, CircleTitle, SubTitle,
   IdeologyCardWrapper, Card,
@@ -10,7 +11,7 @@ const Ideology = ({ data }) => {
   const theme = useTheme();
   return (
     <Wrapper>
-      <Title theme={theme}>경영철학</Title>
+      <Title theme={theme}><Language id="philosophy_of_management" /></Title>
       <IdeologyWrapper>
         {data.map((item, index) => (
           <React.Fragment key={`ideology-circle-${index}`}>
@@ -25,9 +26,9 @@ const Ideology = ({ data }) => {
              <CircleWrapper theme={theme}>
               <Circle>
                 <Icon name={item.icon} size="42" color="#000" />
-                <CircleTitle>{item.title}</CircleTitle>
+                <CircleTitle><Language id={item.title} /></CircleTitle>
               </Circle>
-              <SubTitle>{item.subTitle}</SubTitle>
+              <SubTitle><Language id={item.subTitle} /></SubTitle>
             </CircleWrapper>
           </React.Fragment>
         ))}
@@ -46,9 +47,9 @@ const Ideology = ({ data }) => {
             <Card key={`ideology-card-${index}`}>
               <Circle>
                 <Icon name={item.icon} size="42" color="#000" />
-                <CircleTitle>{item.title}</CircleTitle>
+                <CircleTitle><Language id={item.title} /></CircleTitle>
               </Circle>
-              <SubTitle>{item.subTitle}</SubTitle>
+              <SubTitle><Language id={item.subTitle} /></SubTitle>
             </Card>
           </React.Fragment>
           ))}

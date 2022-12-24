@@ -1,21 +1,21 @@
 export const menu = [
   {
     id: 'company',
-    langKey: 'company', // 회사
+    langKey: 'company', // 회사 소개
     page: 'CompanyPage',
     childs: [
-      { id: 'company_ceo', langKey: 'CEOGreetings', page: 'CEOPage' }, // 대표인사 인사말
-      { id: 'company_introduction', langKey: 'introduction', page: 'IntroductionPage' }, // 소개
+      { id: 'company_ceo', langKey: 'ceo', page: 'CEOPage' }, // 대표인사 인사말
+      { id: 'company_introduction', langKey: 'about_us', page: 'IntroductionPage' }, // 사업 소개
       { id: 'company_history', langKey: 'history', page: 'HistoryPage' }, // 연혁
     ]
   },
   {
     id: 'product',
-    langKey: 'product', // 제품
+    langKey: 'products', // 제품 소개
     page: 'ProductPage',
     childs: [
-      { id: 'product_carrier', langKey: 'carrierAndDeveloper', page: 'CarrierPage' }, //  carrier&developer
-      { id: 'product_cartridge', langKey: 'cartridge', page: 'CartridgePage' }, // cartridge
+      { id: 'product_carrier', langKey: 'carrier_developer', page: 'CarrierPage' }, //  Carrier & Developer
+      { id: 'product_cartridge', langKey: 'cartridge', page: 'CartridgePage' }, // Cartridge
     ],
   },
   {

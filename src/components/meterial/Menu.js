@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { default as MeterialMenu } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
+import Language from '../Language/Language';
 
 const StyledMenu = styled(MeterialMenu)(({ theme }) => ({
   '& .MuiPaper-root': {
@@ -74,7 +75,7 @@ export default function Menu({
             selected={item.id === value}
             onClick={handleMenuItemClick(item.id)}
           >
-            {item.label}
+            <Language id={item.label} />
           </MenuItem>
         ))}
       </StyledMenu>

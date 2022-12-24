@@ -1,12 +1,12 @@
 import * as React from "react";
-import { LanguageContext } from '../../context/LanguageContext';
+import { FormattedMessage } from "react-intl";
 
-const Language = ({ langKey }) => {
-  const { lang } = React.useContext(LanguageContext);
+const Language = ({ id }) => {
   return (
-    <>
-      {lang[langKey]}
-    </>
+    <FormattedMessage
+      id={id}
+      defaultMessage={id}
+    />
   )
 }
 

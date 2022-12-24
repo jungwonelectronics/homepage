@@ -1,4 +1,5 @@
 import * as React from "react";
+import Language from '../Language/Language';
 import { Wrapper, ParagraphStyle } from './ParagraphStyled';
 
 const Paragraph = ({ sentences }) => {
@@ -7,7 +8,7 @@ const Paragraph = ({ sentences }) => {
       <ParagraphStyle>
           {sentences.map((sentence, index) => (
             <React.Fragment key={`Paragraph_${index}`}>
-              {sentence}
+              <Language id={sentence} />
               <br />
             </React.Fragment>
           ))}

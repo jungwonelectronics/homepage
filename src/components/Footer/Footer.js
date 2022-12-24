@@ -1,14 +1,20 @@
 import * as React from 'react';
+import Language from '../Language/Language';
+import { getCurrentPageLanguage } from "../../util/translation";
 import {
   FooterStyled, WrapperStyled, NameStyled, ContactStyled, CopyrightStyled
 } from './FooterStyled';
 
 export default function Footer({ type }) {
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  let currentLang = getCurrentPageLanguage(currentPath);
+  if (currentLang === '') currentLang = 'ko';
+  const call = currentLang === 'ko' ? '041-532-8752' : '+82-41-532-8752';
   return (
     <FooterStyled>
       <WrapperStyled type={type}>
         <NameStyled>JUNGWON ELECTRONICS</NameStyled>
-        <ContactStyled>충청남도 아산시 둔포면 아산밸리동로 295, 3동 / <a href="tel:041-532-8752">041-532-8752</a></ContactStyled>
+        <ContactStyled><Language id="address_detail" /> / <a href={`tel:${call}`}>{call}</a></ContactStyled>
         <CopyrightStyled>Copyright 2022 Jungwon Electronics co.,Ltd. All rights reserved.</CopyrightStyled>
       </WrapperStyled>
     </FooterStyled>

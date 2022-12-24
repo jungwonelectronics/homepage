@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useTheme } from '@mui/material/styles';
+import Language from '../Language/Language';
 import {
   Wrapper, Title, ImageArea, ImageWrapper,
 } from './ProductIntroductionStyled';
@@ -11,9 +12,9 @@ const ProductIntroduction = ({
   return (
     <Wrapper>
       <Title theme={theme}>
-        <span>{title}</span>
+        <span><Language id={title} /></span>
       </Title>
-      <span>{introduction}</span>
+      <span>- <Language id={introduction} /></span>
       <ImageArea>
         {images.map((image, index) => (
           <ImageWrapper key={index}>
