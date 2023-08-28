@@ -30,7 +30,7 @@ export const list = [
         },
       {
         machine: 'MFP/C',
-        jweCode: 'TC32',
+        jweCode: 'TC23s',
         model: 'SL-X3220',
         useInList: [
           'SL-X3220/3280, SL-X4220/4300, CLX-9206/9201',
@@ -43,7 +43,7 @@ export const list = [
     productList: [
       {
         machine: 'Printer/M',
-        jweCode: 'TD-9',
+        jweCode: 'TD-19',
         model: 'Phaser5500',
         useInList: [
           'Phaser 5500/5550/5520/5230',
@@ -55,7 +55,7 @@ export const list = [
       },
       {
         machine: 'Copier/M',
-        jweCode: 'TD-9',
+        jweCode: 'TD-19',
         model: 'WorkCenter M123',
         useInList: [
           'WorkCentre M133/M128/M123/M118',
@@ -102,10 +102,12 @@ export const list = [
       },
       {
         machine: 'Copier/C',
-        jweCode: 'TC43',
+        jweCode: 'TC41/TD41',
         model: 'DCC2270',
         useInList: [
           'DCC2270/DCC2275/DCC3370/DCC3375/DCC4470/DCC5570',
+          'DCC2276/3376/4476',
+          'DCC5580/7780/5585/7785'
         ],
       },
     ],
@@ -149,20 +151,21 @@ export const list = [
       },
       {
         machine: 'MFP/M',
-        jweCode: 'TC40/TD40',
-        model: 'Bizhub 350',
+        jweCode: 'TC40',
+        model: 'Bizhub 450i',
         useInList: [
-          'Bizhub 227/287/367, BHC 250i/D450',
-          'Bizhub 200/222/250/282/350/362, BH 283/263/423(TN217)',
+          'BHC250i/D450',
         ],
         remarks: 'Carrier, Developer',
       },
       {
         machine: 'MFP/M',
-        jweCode: 'TC41/TD41',
+        jweCode: 'TC41',
         model: 'BHC224',
         useInList: [
-          'BHC 224/284/364(TN321), BHC C225/258/368(TN324)',
+          'BHC 224/284/364(TN321), BHC 225/258/368(TN324)',
+          'Bizhub 227/287/367, Bizhub 200/222/250/282/350/362',
+          'BH283/263/423(TN217)',
         ],
         remarks: 'Carrier, Developer',
       },
@@ -206,11 +209,12 @@ export const list = [
       },
       {
         machine: 'Copier/C',
-        jweCode: 'TC33',
+        jweCode: 'TC41',
         model: 'iR ACVC3320',
         useInList: [
-          'IR ACVC 3320/3325/3330, NPG67',
+          'IR ACVC 3320/3325/3330, NPG67, NPG71, NPG46',
         ],
+        remarks: 'Carrier, Developer',
       },
     ],
   },
@@ -250,6 +254,15 @@ export const list = [
         useInList: [
           'Samsung ML8951(A3), ML8851(A4)',
           'Ricoh SP 6100/6200/6300, SP 4100/4200/4300',
+        ],
+      },
+      {
+        machine: 'MFP/M',
+        jweCode: 'TC41',
+        model: 'RICOH MPC2504',
+        useInList: [
+          'SINDOH D430/431/432  ',
+          'MPC2004/MPC2504/MPC3004',
         ],
       },
     ],
